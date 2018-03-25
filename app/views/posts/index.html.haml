@@ -1,5 +1,7 @@
 - @posts.each do |post|
   = link_to (image_tag post.image.url(:small)), post if post.image_file_name.present?
   %h2= link_to post.title, post
+  %p
+    = pluralize(post.comments.count, "Comment")
   
 = link_to "Add new inpiration", new_post_path
