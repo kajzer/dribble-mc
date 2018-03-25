@@ -1,4 +1,6 @@
 = simple_form_for @post do |f|
+  = image_tag @post.image.url(:small) if @post.image_file_name.present?
+  = f.input :image
   = f.input :title
   = f.input :link
   = f.input :description
